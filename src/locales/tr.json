@@ -1,0 +1,63 @@
+{
+  "about": {
+    "aboutMe": "Hakkımda",
+    "experience": "Deneyim",
+    "eliWorldwideExpressLogistics": "Eli Worldwide Express Logistics",
+    "softwareDeveloper": "Yazılım Geliştirici",
+    "present": "Şu Anda",
+    "eliarElectronic": "Eliar Elektronik",
+    "computerProgrammer": "Bilgisayar Programcısı",
+    "education": "Eğitim",
+    "computerEngineering": "Bilgisayar Mühendisliği",
+    "nisantasiUniversity": "Nişantaşı Üniversitesi",
+    "namikKemalUniversity": "Namık Kemal Üniversitesi",
+    "computerProgramming": "Bilgisayar Programlama"
+  },
+  "contact": {
+    "title": "İletişim",
+    "formTitle": "Bana Mesaj Gönder",
+    "namePlaceholder": "Adınız",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Konu",
+    "sendButton": "Gönder",
+    "success": "Mesaj gönderildi!",
+    "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "topbar": {
+    "logoText": "MY",
+    "name": "Mücahit",
+    "surname": "Yaman",
+    "shortText": "MY",
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "projects": "Projeler",
+    "contact": "İletişim"
+  },
+  "footer": {
+    "rights": "Tüm Hakları Saklıdır"
+  },
+  "home": {
+    "greeting": "Selam, ben Mücahit",
+    "role": "Software Developer",
+    "description": "Bilgisayarların ve teknolojinin büyüleyici dünyasına her zaman ilgi duydum. Bu web sitesinde projelerimi ve kendimle ilgili bilgileri bulabilirsiniz. Şu anda {company}'de yazılım geliştirici olarak çalışıyorum."
+  },
+  "projects": {
+    "title": "Projeler",
+    "lockmaster": {
+        "title": "Lock Master",
+        "description": "Güvenli ve çakışmasız eş zamanlı işlemler için gerçek zamanlı kullanıcı bazlı kilitleme sistemi."
+    },
+    "barcodec": {
+        "title": "Barcodec",
+        "description": "Gerçek zamanlı barkod tarama destekli yüksek performanslı stok ve satış yönetim sistemi."
+    },
+    "agrisense": {
+        "title": "Agri Sense",
+        "description": "IoT sensörleri ile gerçek zamanlı veri toplayan akıllı tarım izleme sistemi."
+    },
+    "pracby": {
+        "title": "Pracby",
+        "description": "Çok Yakında..."
+    }
+  }
+}

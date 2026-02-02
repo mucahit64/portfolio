@@ -1,0 +1,63 @@
+{
+  "about": {
+    "aboutMe": "About Me",
+    "experience": "Experience",
+    "eliWorldwideExpressLogistics": "Eli Worldwide Express Logistics",
+    "softwareDeveloper": "Software Developer",
+    "present": "Present",
+    "eliarElectronic": "Eliar Electronic",
+    "computerProgrammer": "Computer Programmer",
+    "education": "Education",
+    "computerEngineering": "Computer Engineering",
+    "nisantasiUniversity": "Nişantaşı University",
+    "namikKemalUniversity": "Namık Kemal University",
+    "computerProgramming": "Computer Programming"
+  },
+  "contact": {
+    "title": "Contact",
+    "formTitle": "Send Me a Message",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Subject",
+    "sendButton": "Send",
+    "success": "Message sent!",
+    "error": "An error occurred. Please try again."
+  },
+  "topbar": {
+    "logoText": "MY",
+    "name": "Mücahit",
+    "surname": "Yaman",
+    "shortText": "MY",
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "footer": {
+    "rights": "All Rights Reserved"
+  },
+  "home": {
+    "greeting": "Hi, I'm Mücahit",
+    "role": "Software Developer",
+    "description": "I've always been fascinated by the world of computers and technology. On this website, you can find my projects and information about me. Currently, I work at {company} as a software developer."
+  },
+  "projects": {
+    "title": "Projects",
+    "lockmaster": {
+      "title": "Lock Master",
+      "description": "Real-time user-based locking system for safe and conflict-free concurrent operations."
+    },
+    "barcodec": {
+      "title": "Barcodec",
+      "description": "High-performance inventory & sales system with real-time barcode scanning."
+    },
+    "agrisense": {
+      "title": "Agri Sense",
+      "description": "Smart agriculture monitoring system with IoT sensors."
+    },
+    "pracby": {
+      "title": "Pracby",
+      "description": "Coming Soon..."
+    }
+  }
+}
