@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import { useDark } from '@/composables/useDark'
-import eliLogo from '@/assets/images/eli-logo.png'
-import eliarLogo from '@/assets/images/Eliar-Logo.svg'
-import nisantasiLogo from '@/assets/images/nisantasi-logo.png'
+import eliLogo from '@/assets/images/eli-logo.svg'
+import eliLogoDark from '@/assets/images/eli-logo-white.svg'
+import eliarLogo from '@/assets/images/eliar-logo.svg'
+import eliarLogoDark from '@/assets/images/eliar-logo-white.svg'
+import nisantasiLogo from '@/assets/images/nu-logo.png'
+import NKULogo from '@/assets/images/nku-logo.svg'
+import NKULogoDark from '@/assets/images/nku-logo-white.svg'
 
 const { isDark } = useDark()
 const { t } = useI18n()
@@ -14,6 +18,7 @@ const aboutSections = [
     items: [
       {
         logo: eliarLogo,
+        logoDark: eliarLogoDark,
         title: 'about.eliarElectronic',
         subtitle: 'about.softwareDeveloper',
         start: '2023',
@@ -21,6 +26,7 @@ const aboutSections = [
       },
       {
         logo: eliLogo,
+        logoDark: eliLogoDark,
         title: 'about.eliWorldwideExpressLogistics',
         subtitle: 'about.computerProgrammer',
         start: '2020',
@@ -33,13 +39,15 @@ const aboutSections = [
     items: [
       {
         logo: nisantasiLogo,
+        logoDark: nisantasiLogo,
         title: 'about.computerEngineering',
         subtitle: 'about.nisantasiUniversity',
         start: '2020',
         end: '2023',
       },
       {
-        logo: 'http://euniversite.nku.edu.tr/sitelogolari/NKU.png',
+        logo: NKULogo,
+        logoDark: NKULogoDark,
         title: 'about.computerProgramming',
         subtitle: 'about.namikKemalUniversity',
         start: '2018',
@@ -88,9 +96,9 @@ const aboutSections = [
       >
         <div class="flex items-center">
           <img
-            :src="item.logo"
+            :src="isDark ? item.logoDark : item.logo"
             alt="Logo"
-            class="w-8 h-8 sm:w-12 sm:h-12 rounded-full object-cover p-1 mr-3"
+            class="w-8 h-8 sm:w-12 sm:h-12 object-contain p-1 mr-3"
           />
           <div>
             <div class="text-sm sm:text-base font-medium">
