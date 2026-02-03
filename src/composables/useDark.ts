@@ -1,6 +1,6 @@
 import { ref, watch } from 'vue'
 
-const isDark = ref(localStorage.getItem('theme') === 'dark')
+const isDark = ref(localStorage.getItem('theme') === 'dark' || localStorage.getItem('theme') === null)
 
 watch(isDark, (val) => {
   localStorage.setItem('theme', val ? 'dark' : 'light')
