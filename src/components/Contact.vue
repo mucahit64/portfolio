@@ -69,8 +69,8 @@ async function sendEmail() {
 
       <!-- Form Card -->
       <div
-        class="w-full max-w-xs rounded-2xl p-6 shadow-md"
-        :class="isDark ? 'bg-[#383838] text-white' : 'bg-[rgb(233,233,233)] text-black'"
+        class="w-full max-w-xs rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
+      :class="isDark ? 'bg-[#2e2e2e]' : 'bg-gray-100'"
       >
         <form class="flex flex-col" @submit.prevent="sendEmail">
           <div
@@ -89,7 +89,7 @@ async function sendEmail() {
             required
             class="mb-4 p-3 rounded-lg border outline-none transition-colors"
             :class="isDark 
-              ? 'bg-[#2e2e2e] border-[#444] text-white placeholder-gray-400 focus:border-blue-500' 
+              ? 'bg-[#383838] border-[#444] text-white placeholder-gray-400 focus:border-blue-500' 
               : 'bg-white border-gray-300 text-black placeholder-gray-500 focus:border-blue-500'"
           />
 
@@ -102,7 +102,7 @@ async function sendEmail() {
             required
             class="mb-4 p-3 rounded-lg border outline-none transition-colors"
             :class="isDark 
-              ? 'bg-[#2e2e2e] border-[#444] text-white placeholder-gray-400 focus:border-blue-500' 
+              ? 'bg-[#383838] border-[#444] text-white placeholder-gray-400 focus:border-blue-500' 
               : 'bg-white border-gray-300 text-black placeholder-gray-500 focus:border-blue-500'"
           />
 
@@ -116,7 +116,7 @@ async function sendEmail() {
             rows="4"
             class="mb-4 p-3 rounded-lg border outline-none transition-colors resize-none"
             :class="isDark 
-              ? 'bg-[#2e2e2e] border-[#444] text-white placeholder-gray-400 focus:border-blue-500' 
+              ? 'bg-[#383838] border-[#444] text-white placeholder-gray-400 focus:border-blue-500' 
               : 'bg-white border-gray-300 text-black placeholder-gray-500 focus:border-blue-500'"
           />
 

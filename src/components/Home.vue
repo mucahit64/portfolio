@@ -15,7 +15,7 @@ const { t } = useI18n()
   >
     <!-- Profile Photo -->
     <div
-      class="flex items-center justify-center border-[16px] sm:border-[20px] border-solid rounded-full transition-colors duration-500"
+      class="flex items-center justify-center border-[16px] sm:border-[20px] border-solid rounded-full transition-colors duration-500 shadow-md hover:shadow-lg"
       :class="isDark ? 'border-[#343434] hover:border-[#3a3a3a]' : 'border-[rgba(220,220,220,1)] hover:border-[rgba(210,210,210,1)]'"
     >
       <img
@@ -26,7 +26,7 @@ const { t } = useI18n()
     </div>
 
     <!-- Info Text -->
-    <div class="w-80 m-10 text-center sm:text-left  font-light">
+    <div class="w-80 m-10 text-center sm:text-left">
       <div class="text-2xl sm:text-4xl whitespace-nowrap">
         {{ t('home.greeting') }}
       </div>

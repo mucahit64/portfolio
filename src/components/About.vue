@@ -83,7 +83,7 @@ const aboutSections = [
       <div
         v-for="(item, index) in section.items"
         :key="index"
-        class="flex items-center justify-between rounded-xl p-3 mb-3 last:mb-0 shadow-md hover:shadow-lg transition-shadow duration-300"
+        class="flex items-center justify-between rounded-xl p-3 mb-3 last:mb-0 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-102"
         :class="isDark ? 'bg-[#383838]' : 'bg-white'"
       >
         <div class="flex items-center">
