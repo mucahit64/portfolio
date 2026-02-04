@@ -3,7 +3,7 @@
   import { useDark } from '@/composables/useDark'
   import barcodeLogo from '@/assets/images/barcode-logo.svg'
   import barcodeLogoDark from '@/assets/images/barcode-logo-white.svg'
-  import lockMasterLogo from '@/assets/images/lock-master-logo.png'
+  import lockMasterLogo from '@/assets/images/lock-master-logo.svg'
   import agriSenseLogo from '@/assets/images/agri-sense.png'
   import pracbyLogo from '@/assets/images/pracby.png'
   import pracbyLogoDark from '@/assets/images/pracby-white.png'
@@ -45,7 +45,7 @@
           <img
             :src="isDark ? proj.imgDark : proj.img"
             :alt="t(proj.titleKey)"
-            class="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-contain sm:p-2 lg:p-2"
+            class="w-24 h-24 sm:w-32 sm:h-32 object-contain sm:p-2 lg:p-2"
           />
 
           <!-- Text -->

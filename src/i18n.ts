@@ -4,7 +4,7 @@ import tr from './locales/tr.json'
 
 export const i18n = createI18n({
   legacy: false,
-  locale: localStorage.getItem('locale') || 'en',
+  locale: localStorage.getItem('locale') || 'tr',
   fallbackLocale: 'en',
   messages: {
     en,
