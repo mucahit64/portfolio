@@ -43,6 +43,7 @@
   },
   "projects": {
     "title": "Projeler",
+    "visit": "Projeye Git",
     "lockmaster": {
         "title": "Lock Master",
         "description": "Güvenli ve çakışmasız eş zamanlı işlemler için gerçek zamanlı kullanıcı bazlı kilitleme sistemi."

@@ -43,6 +43,7 @@
   },
   "projects": {
     "title": "Projects",
+    "visit": "Go to Project",
     "lockmaster": {
       "title": "Lock Master",
       "description": "Real-time user-based locking system for safe and conflict-free concurrent operations."

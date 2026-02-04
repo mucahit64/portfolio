@@ -12,11 +12,16 @@
   const { t } = useI18n()
 
   const projects = [
-    { img: lockMasterLogo, imgDark: lockMasterLogo, titleKey: 'projects.lockmaster.title', descKey: 'projects.lockmaster.description', percent: 100 },
-    { img: barcodeLogo, imgDark: barcodeLogoDark, titleKey: 'projects.barcodec.title', descKey: 'projects.barcodec.description', percent: 100 },
-    { img: agriSenseLogo, imgDark: agriSenseLogo, titleKey: 'projects.agrisense.title', descKey: 'projects.agrisense.description', percent: 60 },
-    { img: pracbyLogo, imgDark: pracbyLogoDark, titleKey: 'projects.pracby.title', descKey: 'projects.pracby.description', percent: 20 },
+    { img: lockMasterLogo, imgDark: lockMasterLogo, titleKey: 'projects.lockmaster.title', descKey: 'projects.lockmaster.description', percent: 100, link: '' },
+    { img: barcodeLogo, imgDark: barcodeLogoDark, titleKey: 'projects.barcodec.title', descKey: 'projects.barcodec.description', percent: 100 , link: '' },
+    { img: agriSenseLogo, imgDark: agriSenseLogo, titleKey: 'projects.agrisense.title', descKey: 'projects.agrisense.description', percent: 60, link: 'https://agri-sense-production.up.railway.app/' },
+    { img: pracbyLogo, imgDark: pracbyLogoDark, titleKey: 'projects.pracby.title', descKey: 'projects.pracby.description', percent: 20, link: 'https://pracby.com' },
   ]
+
+  const openProject = (link: string) => {
+  if (!link) return
+  window.open(link, '_blank')
+}
   </script>
 
   <template>
@@ -40,7 +45,8 @@
           :key="proj.titleKey"
           class="flex items-center p-4 gap-5 rounded-2xl transition-all duration-300 hover:scale-102 shadow-md hover:shadow-lg"
           :class="isDark ? 'bg-[#2e2e2e]' : 'bg-gray-100'"
-        >
+          @click="openProject(proj.link)"
+          >
           <!-- Image -->
           <img
             :src="isDark ? proj.imgDark : proj.img"
@@ -54,7 +60,14 @@
             :class="isDark ? 'text-gray-300' : 'text-gray-700'"
           >
             <div class="text-lg sm:text-xl pb-2">
+             <div class="flex justify-between pr-4 items-center">
               {{ t(proj.titleKey) }}
+              <button 
+                v-if="proj.link" 
+                class="text-sm font-semibold border-1 border-gray-300 dark:border-gray-600 rounded-md px-2 py-1 cursor-pointer"
+                @click.stop="openProject(proj.link)"
+              >{{ t('projects.visit') }}</button>
+             </div>
             </div>
             <div class="text-xs sm:text-sm opacity-80 pb-2">
               {{ t(proj.descKey) }}
