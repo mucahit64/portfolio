@@ -9,8 +9,8 @@ import nisantasiLogo from '@/assets/images/nu-logo.png'
 import NKULogo from '@/assets/images/nku-logo.svg'
 import NKULogoDark from '@/assets/images/nku-logo-white.svg'
 
-const { isDark } = useDark()
 const { t } = useI18n()
+const { isDark } = useDark()
 
 const aboutSections = [
   {
