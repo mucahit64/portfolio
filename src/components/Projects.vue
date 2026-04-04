@@ -14,8 +14,8 @@ const { t } = useI18n()
 const projects = [
   { img: lockMasterLogo, imgDark: lockMasterLogo, titleKey: 'projects.lockmaster.title', descKey: 'projects.lockmaster.description', percent: 100, link: '' },
   { img: barcodeLogo, imgDark: barcodeLogoDark, titleKey: 'projects.barcodec.title', descKey: 'projects.barcodec.description', percent: 100 , link: '' },
-  { img: agriSenseLogo, imgDark: agriSenseLogo, titleKey: 'projects.agrisense.title', descKey: 'projects.agrisense.description', percent: 60, link: 'https://agri-sense.mucahit-yaman.workers.dev' },
-  { img: pracbyLogo, imgDark: pracbyLogoDark, titleKey: 'projects.pracby.title', descKey: 'projects.pracby.description', percent: 20, link: 'https://pracby.com' },
+  { img: agriSenseLogo, imgDark: agriSenseLogo, titleKey: 'projects.agrisense.title', descKey: 'projects.agrisense.description', percent: 85, link: 'https://agri-sense.mucahit-yaman.workers.dev' },
+  { img: pracbyLogo, imgDark: pracbyLogoDark, titleKey: 'projects.pracby.title', descKey: 'projects.pracby.description', percent: 45, link: 'https://pracby.com' },
 ]
 
 const openProject = (link: string) => {
