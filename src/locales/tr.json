@@ -54,11 +54,11 @@
     },
     "agrisense": {
         "title": "Agri Sense",
-        "description": "IoT sensörleri ile gerçek zamanlı veri toplayan akıllı tarım izleme sistemi."
+        "description": "IoT sensörlerinden gerçek zamanlı veri toplayan akıllı tarım izleme sistemi."
     },
     "pracby": {
         "title": "Pracby",
-        "description": "Çok Yakında..."
+        "description": "Kısa pratiklerle öğrenmeyi hedefleyen öğrenme modeli."
     }
   }
 }
