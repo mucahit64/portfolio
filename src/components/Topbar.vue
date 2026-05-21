@@ -12,10 +12,12 @@ const surname = computed(() => t('topbar.surname'))
 const shortText = computed(() => `${name.value.split(' ').map((n: string) => n.charAt(0)).join('')}${surname.value.charAt(0)}`)
 const logoText = ref(shortText.value)
 let animationTimeouts: number[] = []
+const isAnimating = ref(false)
 
 function animateText() {
   animationTimeouts.forEach(clearTimeout)
   animationTimeouts = []
+  isAnimating.value = true
 
   const fullText = `${name.value} ${surname.value}`
 
@@ -26,7 +28,7 @@ function animateText() {
     animationTimeouts.push(timeout as unknown as number)
   }
 
-  const reverseTimeout = setTimeout(reverseAnimateText, fullText.length * 20 + 1000)
+  const reverseTimeout = setTimeout(reverseAnimateText, fullText.length * 30 + 1000)
   animationTimeouts.push(reverseTimeout as unknown as number)
 }
 
@@ -52,6 +54,17 @@ function reverseAnimateText() {
     }, index * 30)
     animationTimeouts.push(timeout as unknown as number)
   })
+
+  const doneTimeout = setTimeout(() => {
+    isAnimating.value = false
+  }, steps.length * 30 + 50)
+  animationTimeouts.push(doneTimeout as unknown as number)
+}
+
+function handleMouseEnter() {
+  if (!isAnimating.value) {
+    animateText()
+  }
 }
 
 const currentLocale = ref(locale.value)
@@ -93,8 +106,8 @@ watch(locale, () => {
   >
     <!-- Logo -->
     <div
-      class="text-2xl transition-colors duration-300 cursor-pointer"
-      @mouseenter="animateText"
+      class="text-2xl transition-colors duration-300 cursor-pointer whitespace-nowrap"
+      @mouseenter="handleMouseEnter"
       @click="scrollToSection('section-1')"
     >
       {{ logoText }}
@@ -107,7 +120,7 @@ watch(locale, () => {
         <button
           v-for="item in menuItems"
           :key="item.key"
-          class="text-xs p-4 transition-colors duration-300 font-medium"
+          class="text-xs p-4 transition-colors duration-200 font-medium"
         :class="isDark ? 'text-gray-300 hover:bg-[#383838]' : 'text-gray-700 hover:bg-gray-300'"
           @click="scrollToSection(item.section)"
         >
@@ -154,10 +167,7 @@ watch(locale, () => {
         <!-- Theme Toggle -->
         <button
           class="p-2 rounded-full hover:opacity-70 transition-opacity"
-          @click="{
-            animateText();
-            toggle()
-          }"
+          @click="() => { if (!isAnimating) animateText(); toggle() }"
         >
           <svg v-if="isDark" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 0 0 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>

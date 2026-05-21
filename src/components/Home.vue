@@ -10,12 +10,12 @@ const { t } = useI18n()
 <template>
   <div
     id="section-1"
-    class="flex flex-col sm:flex-row items-center justify-center w-full min-h-screen transition-colors duration-500 pt-24"
+    class="flex flex-col sm:flex-row items-center justify-center w-full min-h-svh transition-colors duration-300 pt-24"
     :class="isDark ? 'bg-[#212121] text-[#d2d2d2]' : 'bg-white text-[#505050]'"
   >
     <!-- Profile Photo -->
     <div
-      class="flex items-center justify-center border-[16px] sm:border-[20px] border-solid rounded-full transition-colors duration-500 shadow-md hover:shadow-lg"
+      class="flex items-center justify-center border-[16px] sm:border-[20px] border-solid rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
       :class="isDark ? 'border-[#343434] hover:border-[#3a3a3a]' : 'border-[rgba(220,220,220,1)] hover:border-[rgba(210,210,210,1)]'"
     >
       <img
@@ -26,7 +26,7 @@ const { t } = useI18n()
     </div>
 
     <!-- Info Text -->
-    <div class="w-80 m-10 text-center sm:text-left">
+    <div class="w-full max-w-sm px-6 mt-6 mb-8 sm:mt-0 sm:w-80 sm:m-10 text-center sm:text-left">
       <div class="text-2xl sm:text-4xl whitespace-nowrap">
         {{ t('home.greeting') }}
       </div>

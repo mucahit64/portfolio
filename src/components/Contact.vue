@@ -54,11 +54,11 @@ async function sendEmail() {
 <template>
   <div
     id="section-4"
-    class="flex flex-col min-h-screen w-full pt-24"
+    class="flex flex-col min-h-svh w-full pt-24 transition-colors duration-300"
     :class="isDark ? 'bg-[#212121] text-white' : 'bg-white text-black'"
   >
     <!-- Content -->
-    <div class="flex flex-col items-center justify-center pb-24">
+      <div class="flex flex-col items-center justify-center pb-24 px-4">
       <!-- Title -->
       <div
         class="text-xl sm:text-2xl mb-4 text-center"
@@ -69,8 +69,8 @@ async function sendEmail() {
 
       <!-- Form Card -->
       <div
-        class="w-full max-w-xs rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
-      :class="isDark ? 'bg-[#2e2e2e]' : 'bg-gray-100'"
+        class="w-full max-w-xs sm:max-w-sm rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-200"
+        :class="isDark ? 'bg-[#2e2e2e]' : 'bg-gray-100'"
       >
         <form class="flex flex-col" @submit.prevent="sendEmail">
           <div

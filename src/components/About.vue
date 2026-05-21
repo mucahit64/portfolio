@@ -61,7 +61,7 @@ const aboutSections = [
 <template>
   <div
     id="section-2"
-    class="flex flex-col w-full min-h-screen justify-center items-center pt-24"
+    class="flex flex-col w-full justify-center items-center pt-24 pb-16 transition-colors duration-300"
     :class="isDark ? 'bg-[#212121] text-white' : 'bg-white text-black'"
   >
     <!-- Title -->
@@ -76,7 +76,7 @@ const aboutSections = [
     <div
       v-for="(section, sIndex) in aboutSections"
       :key="sIndex"
-      class="w-80 sm:w-[30rem] rounded-2xl p-4 mb-4"
+      class="w-full max-w-xs sm:max-w-[30rem] mx-4 sm:mx-0 rounded-2xl p-4 mb-4 transition-colors duration-300"
       :class="isDark ? 'bg-[#2e2e2e]' : 'bg-gray-100'"
     >
       <!-- Section Title -->
@@ -91,7 +91,7 @@ const aboutSections = [
       <div
         v-for="(item, index) in section.items"
         :key="index"
-        class="flex items-center justify-between rounded-xl p-3 mb-3 last:mb-0 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-102"
+        class="flex items-center justify-between rounded-xl p-3 mb-3 last:mb-0 shadow-md hover:shadow-lg transition-all duration-200 hover:scale-102"
         :class="isDark ? 'bg-[#383838]' : 'bg-white'"
       >
         <div class="flex items-center">

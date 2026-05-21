@@ -29,7 +29,7 @@ const getImage = (proj: { img: string; imgDark: string }) => isDark.value ? proj
 <template>
   <div
     id="section-3"
-    class="flex flex-col w-full min-h-screen justify-center items-center pt-24"
+    class="flex flex-col w-full min-h-svh justify-center items-center pt-24 pb-16 transition-colors duration-300"
     :class="isDark ? 'bg-[#212121] text-white' : 'bg-white text-gray-700'"
   >
     <!-- Title -->
@@ -45,7 +45,7 @@ const getImage = (proj: { img: string; imgDark: string }) => isDark.value ? proj
       <div
         v-for="proj in projects"
         :key="proj.titleKey"
-        class="flex items-center p-4 gap-4 rounded-2xl transition-all duration-300 hover:scale-102 shadow-md hover:shadow-lg"
+        class="flex items-center p-4 gap-4 rounded-2xl transition-all duration-200 hover:scale-102 shadow-md hover:shadow-lg cursor-pointer"
         :class="isDark ? 'bg-[#2e2e2e]' : 'bg-gray-100'"
         @click="openProject(proj.link)"
         >
