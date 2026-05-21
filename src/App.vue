@@ -7,7 +7,7 @@ import Contact from '@/components/Contact.vue'
 </script>
 
 <template>
-  <div>
+  <div class="fixed inset-0 w-full h-full overflow-y-auto screen-scroller">
     <Topbar />
     <Home />
     <About />
@@ -15,3 +15,9 @@ import Contact from '@/components/Contact.vue'
     <Contact />
   </div>
 </template>
+
+<style scoped>
+.screen-scroller {
+  -webkit-overflow-scrolling: touch;
+}
+</style>
