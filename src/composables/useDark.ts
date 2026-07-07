@@ -1,9 +1,19 @@
 import { ref, watch } from 'vue'
 
-const isDark = ref(localStorage.getItem('theme') === 'dark')
+function getInitialTheme(): boolean {
+  try {
+    return localStorage.getItem('theme') === 'dark'
+  } catch {
+    return false
+  }
+}
+
+const isDark = ref(getInitialTheme())
 
 watch(isDark, (val) => {
-  localStorage.setItem('theme', val ? 'dark' : 'light')
+  try {
+    localStorage.setItem('theme', val ? 'dark' : 'light')
+  } catch { /* storage unavailable */ }
   document.documentElement.classList.toggle('dark', val)
 }, { immediate: true })
 

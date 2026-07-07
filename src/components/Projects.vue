@@ -20,7 +20,7 @@ const projects = [
 
 const openProject = (link: string) => {
   if (!link) return
-  window.open(link, '_blank')
+  window.open(link, '_blank', 'noopener,noreferrer')
 }
 
 const getImage = (proj: { img: string; imgDark: string }) => isDark.value ? proj.imgDark : proj.img
@@ -45,7 +45,7 @@ const getImage = (proj: { img: string; imgDark: string }) => isDark.value ? proj
       <div
         v-for="proj in projects"
         :key="proj.titleKey"
-        class="flex items-center p-4 gap-4 rounded-2xl transition-all duration-200 hover:scale-102 shadow-md hover:shadow-lg cursor-pointer"
+        class="flex items-center p-4 gap-4 rounded-2xl transition-all duration-200 hover:scale-105 shadow-md hover:shadow-lg cursor-pointer"
         :class="isDark ? 'bg-[#2e2e2e]' : 'bg-gray-100'"
         @click="openProject(proj.link)"
         >
@@ -58,7 +58,7 @@ const getImage = (proj: { img: string; imgDark: string }) => isDark.value ? proj
 
         <!-- Text -->
         <div
-          class="flex flex-col justify-center w-50 sm:w-80 h-full"
+          class="flex flex-col justify-center w-48 sm:w-80 h-full"
           :class="isDark ? 'text-gray-300' : 'text-gray-700'"
         >
           <div class="text-lg sm:text-xl pb-2">

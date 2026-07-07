@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useDark } from '@/composables/useDark'
-import Footer from '@/components/Footer.vue'
 
 const { isDark } = useDark()
 const { t } = useI18n()
@@ -14,40 +13,43 @@ const loading = ref(false)
 const responseMessage = ref('')
 const success = ref(false)
 
+const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as string
+
 async function sendEmail() {
   loading.value = true
   responseMessage.value = ''
 
   try {
-    const formData = new FormData()
-    formData.append('name', name.value)
-    formData.append('email', email.value)
-    formData.append('message', message.value)
-
-    const response = await fetch('/send-email.php', {
+    const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      body: formData,
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: ACCESS_KEY,
+        name: name.value,
+        email: email.value,
+        message: message.value,
+      }),
     })
 
-    const text = await response.text()
-    success.value = text.includes('success')
+    const data = await response.json()
 
-    if (success.value) {
+    if (data.success) {
+      success.value = true
       responseMessage.value = t('contact.success')
       name.value = ''
       email.value = ''
       message.value = ''
     } else {
+      success.value = false
       responseMessage.value = t('contact.error')
     }
-
-    setTimeout(() => (responseMessage.value = ''), 5000)
   } catch {
     success.value = false
     responseMessage.value = t('contact.error')
+  } finally {
+    loading.value = false
+    setTimeout(() => (responseMessage.value = ''), 5000)
   }
-
-  loading.value = false
 }
 </script>
 
@@ -58,7 +60,7 @@ async function sendEmail() {
     :class="isDark ? 'bg-[#212121] text-white' : 'bg-white text-black'"
   >
     <!-- Content -->
-      <div class="flex flex-col items-center justify-center pb-24 px-4">
+      <div class="flex flex-col items-center justify-center flex-1 pb-24 px-4">
       <!-- Title -->
       <div
         class="text-xl sm:text-2xl mb-4 text-center"
@@ -146,8 +148,5 @@ async function sendEmail() {
         </form>
       </div>
     </div>
-
-    <!-- Footer -->
-    <Footer class="mt-auto" />
   </div>
 </template>

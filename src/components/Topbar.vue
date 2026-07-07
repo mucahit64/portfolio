@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useDark } from '@/composables/useDark'
 import { scrollToSection } from '@/utils/scroll'
@@ -36,17 +36,14 @@ function reverseAnimateText() {
   animationTimeouts.forEach(clearTimeout)
   animationTimeouts = []
 
-  let fullText = `${name.value} ${surname.value}`
-  const steps: string[] = [fullText]
+  const fullText = `${name.value} ${surname.value}`
+  const short = shortText.value
+  const steps: string[] = []
 
-  for (let i = fullText.length - 1; i > 0; i--) {
-    const parts = fullText.split(' ')
-    const n = parts[0] || ''
-    const s = parts[1] || ''
-    fullText = `${n.slice(0, i)} ${s.slice(0, i)}`
-    steps.push(fullText)
+  for (let i = fullText.length - 1; i >= short.length; i--) {
+    steps.push(fullText.slice(0, i))
   }
-  steps.push(shortText.value)
+  steps.push(short)
 
   steps.forEach((text, index) => {
     const timeout = setTimeout(() => {
@@ -90,8 +87,21 @@ const menuItems = computed(() => [
   { key: 'contact', section: 'section-4' }
 ])
 
+function handleOutsideClick(event: MouseEvent) {
+  const target = event.target as HTMLElement
+  if (!target.closest('.lang-menu-container')) {
+    isLangMenuOpen.value = false
+  }
+}
+
 onMounted(() => {
   setTimeout(() => animateText(), 2000)
+  document.addEventListener('click', handleOutsideClick)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleOutsideClick)
+  animationTimeouts.forEach(clearTimeout)
 })
 
 watch(locale, () => {
@@ -101,7 +111,7 @@ watch(locale, () => {
 
 <template>
   <div
-    class="fixed text-3 flex items-center justify-between left-6 right-6 top-6 z-50 h-20 rounded-full transition-all px-6 duration-300 select-none lg:px-12"
+    class="fixed flex items-center justify-between left-6 right-6 top-6 z-50 h-20 rounded-full transition-all px-6 duration-300 select-none lg:px-12"
     :class="isDark ? 'bg-[#2e2e2e] text-gray-300' : 'bg-gray-200 text-gray-700'"
   >
     <!-- Logo -->
@@ -131,10 +141,12 @@ watch(locale, () => {
       <!-- Language & Theme -->
       <div class="flex items-center gap-3 ml-4">
         <!-- Language Selector -->
-        <div class="relative">
+        <div class="relative lang-menu-container">
           <button
             class="p-2 rounded-full hover:opacity-70 transition-opacity"
             :class="isDark ? 'text-gray-300' : 'text-gray-700'"
+            :aria-label="t('topbar.selectLanguage')"
+            aria-haspopup="listbox"
             @click="toggleLangMenu"
           >
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
@@ -167,6 +179,7 @@ watch(locale, () => {
         <!-- Theme Toggle -->
         <button
           class="p-2 rounded-full hover:opacity-70 transition-opacity"
+          :aria-label="isDark ? t('topbar.switchToLight') : t('topbar.switchToDark')"
           @click="() => { if (!isAnimating) animateText(); toggle() }"
         >
           <svg v-if="isDark" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">

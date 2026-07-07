@@ -31,7 +31,10 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "selectLanguage": "Select language",
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode"
   },
   "footer": {
     "rights": "All Rights Reserved"
@@ -39,7 +42,8 @@
   "home": {
     "greeting": "Hi, I'm Mücahit",
     "role": "Software Developer",
-    "description": "I've always been fascinated by the world of computers and technology. On this website, you can find my projects and information about me. Currently, I work at {company} as a software developer."
+    "description": "I've always been fascinated by the world of computers and technology. On this website, you can find my projects and information about me. Currently, I work at ",
+    "descriptionSuffix": " as a software developer."
   },
   "projects": {
     "title": "Projects",

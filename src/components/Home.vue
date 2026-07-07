@@ -20,7 +20,7 @@ const { t } = useI18n()
     >
       <img
         :src="profilePhoto"
-        alt="Profile"
+        alt="Mücahit Yaman"
         class="w-40 h-40 sm:w-60 sm:h-60 rounded-full object-cover cursor-pointer"
       />
     </div>
@@ -34,7 +34,14 @@ const { t } = useI18n()
         {{ t('home.role') }}
       </div>
       <div class="text-sm sm:text-base pt-4">
-        <span v-html="t('home.description', { company: `<a href='https://www.eliar.com/' target='_blank' class='underline text-inherit hover:opacity-70'>Eliar Elektronik</a>` })" />
+        {{ t('home.description') }}
+        <a
+          href="https://www.eliar.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline text-inherit hover:opacity-70"
+        >Eliar Elektronik</a>
+        {{ t('home.descriptionSuffix') }}
       </div>
     </div>
   </div>

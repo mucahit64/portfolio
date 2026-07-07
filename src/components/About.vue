@@ -74,8 +74,8 @@ const aboutSections = [
 
     <!-- Experience & Education -->
     <div
-      v-for="(section, sIndex) in aboutSections"
-      :key="sIndex"
+      v-for="section in aboutSections"
+      :key="section.type"
       class="w-full max-w-xs sm:max-w-[30rem] mx-4 sm:mx-0 rounded-2xl p-4 mb-4 transition-colors duration-300"
       :class="isDark ? 'bg-[#2e2e2e]' : 'bg-gray-100'"
     >
@@ -89,15 +89,15 @@ const aboutSections = [
 
       <!-- Content Cards -->
       <div
-        v-for="(item, index) in section.items"
-        :key="index"
-        class="flex items-center justify-between rounded-xl p-3 mb-3 last:mb-0 shadow-md hover:shadow-lg transition-all duration-200 hover:scale-102"
+        v-for="item in section.items"
+        :key="item.title"
+        class="flex items-center justify-between rounded-xl p-3 mb-3 last:mb-0 shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105"
         :class="isDark ? 'bg-[#383838]' : 'bg-white'"
       >
         <div class="flex items-center">
           <img
             :src="isDark ? item.logoDark : item.logo"
-            alt="Logo"
+            :alt="t(item.title)"
             class="w-8 h-8 sm:w-12 sm:h-12 object-contain p-1 mr-3"
           />
           <div>
