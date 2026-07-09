@@ -61,7 +61,7 @@ const aboutSections = [
 <template>
   <div
     id="section-2"
-    class="flex flex-col w-full justify-center items-center pt-24 pb-16 transition-colors duration-300"
+    class="flex flex-col w-full min-h-svh justify-center items-center pt-24 pb-16 transition-colors duration-300"
     :class="isDark ? 'bg-[#212121] text-white' : 'bg-white text-black'"
   >
     <!-- Title -->
