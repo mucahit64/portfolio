@@ -65,7 +65,7 @@ onUnmounted(() => observer?.disconnect())
     <div ref="sectionRef" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full max-w-4xl px-4 sm:px-6">
       
       <div
-        v-for="(skill, index) in skills"
+        v-for="skill in skills"
         :key="skill.name"
         class="flex flex-row items-center justify-start rounded-2xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-default
                gap-4 px-5 py-4 sm:gap-5 sm:px-8 sm:py-6 md:px-10 md:py-8
