@@ -45,10 +45,6 @@ onMounted(() => {
 })
 
 onUnmounted(() => observer?.disconnect())
-
-function cardDelay(index: number): string {
-  return `${index * 60}ms`
-}
 </script>
 
 <template>
@@ -71,19 +67,13 @@ function cardDelay(index: number): string {
       <div
         v-for="(skill, index) in skills"
         :key="skill.name"
-        class="flex flex-row items-center justify-start rounded-2xl cursor-default shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200
+        class="flex flex-row items-center justify-start rounded-2xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-default
                gap-4 px-5 py-4 sm:gap-5 sm:px-8 sm:py-6 md:px-10 md:py-8
                w-full max-w-[260px] sm:max-w-none mx-auto"
         :class="[
-          isDark ? 'bg-[#2e2e2e]' : 'bg-gray-100',
+          isDark ? 'bg-[#2e2e2e] hover:bg-[#383838]' : 'bg-gray-100 hover:bg-white',
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         ]"
-        :style="{
-          transitionProperty: 'opacity, transform, box-shadow, background-color',
-          transitionDuration: isVisible ? '600ms' : '0ms',
-          transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-          transitionDelay: isVisible ? cardDelay(index) : '0ms',
-        }"
       >
         <img
           :src="skill.icon"

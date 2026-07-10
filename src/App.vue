@@ -9,7 +9,7 @@ import Footer from '@/components/Footer.vue'
 </script>
 
 <template>
-  <div class="fixed inset-0 w-full h-full overflow-y-auto screen-scroller">
+  <div class="fixed inset-0 w-full h-full overflow-y-auto screen-scroller select-none">
     <Topbar />
     <Home />
     <About />
