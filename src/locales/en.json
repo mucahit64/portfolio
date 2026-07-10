@@ -23,6 +23,9 @@
     "success": "Message sent!",
     "error": "An error occurred. Please try again."
   },
+  "skills": {
+    "title": "Skills"
+  },
   "topbar": {
     "logoText": "MY",
     "name": "Mücahit",
@@ -30,6 +33,7 @@
     "shortText": "MY",
     "home": "Home",
     "about": "About",
+    "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact",
     "selectLanguage": "Select language",

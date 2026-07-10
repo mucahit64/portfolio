@@ -83,8 +83,9 @@ function toggleLangMenu() {
 const menuItems = computed(() => [
   { key: 'home', section: 'section-1' },
   { key: 'about', section: 'section-2' },
-  { key: 'projects', section: 'section-3' },
-  { key: 'contact', section: 'section-4' }
+  { key: 'skills', section: 'section-3' },
+  { key: 'projects', section: 'section-4' },
+  { key: 'contact', section: 'section-5' }
 ])
 
 function handleOutsideClick(event: MouseEvent) {

@@ -28,13 +28,13 @@ const getImage = (proj: { img: string; imgDark: string }) => isDark.value ? proj
 
 <template>
   <div
-    id="section-3"
+    id="section-4"
     class="flex flex-col w-full min-h-svh justify-center items-center pt-24 pb-16 transition-colors duration-300"
     :class="isDark ? 'bg-[#212121] text-white' : 'bg-white text-gray-700'"
   >
     <!-- Title -->
     <div
-      class="text-xl sm:text-2xl mb-8 text-center "
+      class="text-xl sm:text-2xl mb-12 text-center font-semibold"
       :class="isDark ? 'text-gray-300' : 'text-gray-700'"
     >
       {{ t('projects.title') }}

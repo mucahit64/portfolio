@@ -55,7 +55,7 @@ async function sendEmail() {
 
 <template>
   <div
-    id="section-4"
+    id="section-5"
     class="flex flex-col min-h-svh w-full pt-24 transition-colors duration-300"
     :class="isDark ? 'bg-[#212121] text-white' : 'bg-white text-black'"
   >
@@ -63,7 +63,7 @@ async function sendEmail() {
       <div class="flex flex-col items-center justify-center flex-1 pb-24 px-4">
       <!-- Title -->
       <div
-        class="text-xl sm:text-2xl mb-4 text-center"
+        class="text-xl sm:text-2xl mb-12 text-center font-semibold"
         :class="isDark ? 'text-gray-300' : 'text-gray-700'"
       >
         {{ t('contact.title') }}

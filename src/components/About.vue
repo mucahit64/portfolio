@@ -66,7 +66,7 @@ const aboutSections = [
   >
     <!-- Title -->
     <div
-      class="text-xl sm:text-2xl mb-4 text-center"
+      class="text-xl sm:text-2xl mb-12 text-center font-semibold"
       :class="isDark ? 'text-gray-300' : 'text-gray-700'"
     >
       {{ t('about.aboutMe') }}
