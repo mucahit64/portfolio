@@ -21,6 +21,7 @@ const skills: Skill[] = [
   { name: 'Nuxt', icon: `${CDN}/nuxtjs/nuxtjs-original.svg` },
   { name: 'Node.js', icon: `${CDN}/nodejs/nodejs-original.svg` },
   { name: 'Express', icon: `${CDN}/express/express-original.svg`, invertInDark: true },
+  { name: 'C#', icon: `${CDN}/csharp/csharp-original.svg` },
   { name: 'PostgreSQL', icon: `${CDN}/postgresql/postgresql-original.svg` },
   { name: 'MS SQL Server', icon: `${CDN}/microsoftsqlserver/microsoftsqlserver-plain.svg`, invertInDark: true },
   { name: 'Git', icon: `${CDN}/git/git-original.svg` },
