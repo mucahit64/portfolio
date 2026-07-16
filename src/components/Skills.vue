@@ -24,7 +24,6 @@ const skills: Skill[] = [
   { name: 'C#', icon: `${CDN}/csharp/csharp-original.svg` },
   { name: 'PostgreSQL', icon: `${CDN}/postgresql/postgresql-original.svg` },
   { name: 'MS SQL Server', icon: `${CDN}/microsoftsqlserver/microsoftsqlserver-plain.svg`, invertInDark: true },
-  { name: 'Git', icon: `${CDN}/git/git-original.svg` },
 ]
 
 const sectionRef = ref<HTMLElement | null>(null)
