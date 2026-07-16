@@ -11,11 +11,21 @@ import pracbyLogoDark from '@/assets/images/pracby-white.png'
 const { isDark } = useDark()
 const { t } = useI18n()
 
-const projects = [
-  { img: lockMasterLogo, imgDark: lockMasterLogo, titleKey: 'projects.lockmaster.title', descKey: 'projects.lockmaster.description', percent: 100, link: '' },
-  { img: barcodeLogo, imgDark: barcodeLogoDark, titleKey: 'projects.barcodec.title', descKey: 'projects.barcodec.description', percent: 100 , link: '' },
-  { img: agriSenseLogo, imgDark: agriSenseLogo, titleKey: 'projects.agrisense.title', descKey: 'projects.agrisense.description', percent: 85, link: 'https://agri-sense.mucahit-yaman.workers.dev' },
-  { img: pracbyLogo, imgDark: pracbyLogoDark, titleKey: 'projects.pracby.title', descKey: 'projects.pracby.description', percent: 45, link: 'https://pracby.com' },
+interface Project {
+  img: string
+  imgDark: string
+  titleKey: string
+  descKey: string
+  percent: number
+  link: string
+  tech: string[]
+}
+
+const projects: Project[] = [
+  { img: lockMasterLogo, imgDark: lockMasterLogo, titleKey: 'projects.lockmaster.title', descKey: 'projects.lockmaster.description', percent: 100, link: '', tech: ['C#', 'MS SQL Server'] },
+  { img: barcodeLogo, imgDark: barcodeLogoDark, titleKey: 'projects.barcodec.title', descKey: 'projects.barcodec.description', percent: 100, link: '', tech: ['C#', 'PostgreSQL'] },
+  { img: agriSenseLogo, imgDark: agriSenseLogo, titleKey: 'projects.agrisense.title', descKey: 'projects.agrisense.description', percent: 85, link: 'https://agri-sense.mucahit-yaman.workers.dev', tech: ['TypeScript', 'Vue.js', 'Node.js'] },
+  { img: pracbyLogo, imgDark: pracbyLogoDark, titleKey: 'projects.pracby.title', descKey: 'projects.pracby.description', percent: 45, link: 'https://pracby.com', tech: ['TypeScript', 'Vue.js', 'Nuxt'] },
 ]
 
 const openProject = (link: string) => {
@@ -66,13 +76,25 @@ const getImage = (proj: { img: string; imgDark: string }) => isDark.value ? proj
             {{ t(proj.titleKey) }}
             <button 
               v-if="proj.link" 
-              class="text-xs font-semibold border border-gray-300 dark:border-gray-600 rounded-md px-2 py-1 cursor-pointer"
+              class="text-[10px] font-semibold border border-gray-300 dark:border-gray-600 rounded-md p-1 sm:text-xs cursor-pointer"
               @click.stop="openProject(proj.link)"
             >{{ t('projects.visit') }}</button>
             </div>
           </div>
           <div class="text-xs sm:text-sm opacity-80 pb-2">
             {{ t(proj.descKey) }}
+          </div>
+          
+          <!-- Tech badges -->
+          <div v-if="proj.tech.length" class="flex flex-wrap gap-1.5 pb-2">
+            <span
+              v-for="tech in proj.tech"
+              :key="tech"
+              class="inline-flex items-center rounded-full px-2 py-0.5 text-[10px] sm:text-xs font-medium"
+              :class="isDark ? 'bg-[#3a3a3a] text-gray-200' : 'bg-gray-200 text-gray-700'"
+            >
+              {{ tech }}
+            </span>
           </div>
           
           <div v-if="proj.percent < 100">

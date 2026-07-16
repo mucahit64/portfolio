@@ -15,15 +15,23 @@ interface Skill {
 const CDN = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons'
 
 const skills: Skill[] = [
+  // Frontend
   { name: 'TypeScript', icon: `${CDN}/typescript/typescript-original.svg` },
   { name: 'JavaScript', icon: `${CDN}/javascript/javascript-original.svg` },
   { name: 'Vue.js', icon: `${CDN}/vuejs/vuejs-original.svg` },
   { name: 'Nuxt', icon: `${CDN}/nuxtjs/nuxtjs-original.svg` },
+  { name: 'Quasar', icon: `${CDN}/quasar/quasar-original.svg` },
+  { name: 'Tailwind CSS', icon: `${CDN}/tailwindcss/tailwindcss-original.svg` },
+  
+  // Backend & Veritabanı
   { name: 'Node.js', icon: `${CDN}/nodejs/nodejs-original.svg` },
   { name: 'Express', icon: `${CDN}/express/express-original.svg`, invertInDark: true },
-  { name: 'C#', icon: `${CDN}/csharp/csharp-original.svg` },
+  { name: '.NET', icon: `${CDN}/dot-net/dot-net-original.svg` },
   { name: 'PostgreSQL', icon: `${CDN}/postgresql/postgresql-original.svg` },
   { name: 'MS SQL Server', icon: `${CDN}/microsoftsqlserver/microsoftsqlserver-plain.svg`, invertInDark: true },
+  
+  // DevOps & Araçlar
+  { name: 'Docker', icon: `${CDN}/docker/docker-original.svg` },
 ]
 
 const sectionRef = ref<HTMLElement | null>(null)
