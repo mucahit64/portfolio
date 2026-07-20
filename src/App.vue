@@ -29,5 +29,6 @@ const { isDark } = useDark()
 <style scoped>
 .screen-scroller {
   -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
 }
 </style>
